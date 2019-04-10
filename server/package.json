@@ -1,0 +1,20 @@
+{
+  "name": "flutter_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "bihire",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pg": "^7.9.0",
+    "pg-hstore": "*",
+    "sequelize": "^5.2.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
