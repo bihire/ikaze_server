@@ -21,181 +21,346 @@ class MainContentState extends State<MainContent> {
       shrinkWrap: true,
       physics: ClampingScrollPhysics(),
       children: <Widget>[
-        Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0),
-            child: Container(
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Text(
-                        'Explore',
-                        style: TextStyle(
-                          fontSize: 30.0,
-                          color: Colors.black,
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(height: 20.0),
-                  Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 5.0),
-                          child: Container(
-                            height: 100.0,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5.0),
-                                color: Color(0xFFFD7384)),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
+        Container(
+          child: Column(
+            children: <Widget>[
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: 20.0, horizontal: 10.0),
+                      child: Container(
+                        height: 140.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            gradient: new LinearGradient(
+                              stops: [0.98, 0.02],
+                              colors: [Colors.white, Colors.red],
+                            ),
+                            border: Border.all(color: Colors.grey),
+                            color: Color(0xFFFD7384)),
+                        child: Column(
+                          children: <Widget>[
+                            Row(
                               children: <Widget>[
-                                Icon(
-                                  Icons.drive_eta,
-                                  color: Colors.white,
-                                )
+                                Expanded(
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                          border: Border(
+                                              bottom: BorderSide(
+                                                  color: Colors.grey))),
+                                      height: 50,
+                                      // top cards
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(3.0),
+                                        child: Row(
+                                          children: <Widget>[
+                                            Expanded(
+                                                child: Center(
+                                              child: Container(
+                                                child: Text(
+                                                  'Ibikoresho',
+                                                  style:
+                                                      TextStyle(fontSize: 16.0),
+                                                ),
+                                              ),
+                                            )),
+                                            Center(
+                                              heightFactor: 40.0,
+                                              child: Container(
+                                                child: Image.asset(
+                                                    'assets/images/firstcard/HOME-APPLIANCES-2.PNG'),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      )),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        border: Border(
+                                      left: BorderSide(color: Colors.grey),
+                                      right: BorderSide(color: Colors.grey),
+                                    )),
+                                    height: 50,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(3.0),
+                                      child: Row(
+                                        children: <Widget>[
+                                          Expanded(
+                                              child: Center(
+                                            child: Container(
+                                              child: Text(
+                                                'Ibiribwa',
+                                                style:
+                                                    TextStyle(fontSize: 16.0),
+                                              ),
+                                            ),
+                                          )),
+                                          Center(
+                                            heightFactor: 40.0,
+                                            child: Container(
+                                              child: Image.asset(
+                                                  'assets/images/firstcard/Food-PNG-High-Quality-Image.png'),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
-                          ),
+                            Row(
+                              children: <Widget>[
+                                Expanded(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        border: Border(
+                                            bottom: BorderSide(
+                                                color: Colors.grey))),
+                                    height: 50,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(3.0),
+                                      child: Row(
+                                        children: <Widget>[
+                                          Expanded(
+                                              child: Center(
+                                            child: Container(
+                                              child: Text(
+                                                'Inzu',
+                                                style:
+                                                    TextStyle(fontSize: 16.0),
+                                              ),
+                                            ),
+                                          )),
+                                          Center(
+                                            heightFactor: 40.0,
+                                            child: Container(
+                                              child: Image.asset(
+                                                  'assets/images/firstcard/HOME-APPLIANCES-2.PNG'),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        border: Border.all(color: Colors.grey)),
+                                    height: 50,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(3.0),
+                                      child: Row(
+                                        children: <Widget>[
+                                          Expanded(
+                                              child: Center(
+                                            child: Container(
+                                              child: Text(
+                                                'service',
+                                                style:
+                                                    TextStyle(fontSize: 16.0),
+                                              ),
+                                            ),
+                                          )),
+                                          Center(
+                                            heightFactor: 40.0,
+                                            child: Container(
+                                              child: Image.asset(
+                                                  'assets/images/firstcard/services-png-7.png'),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
-                      Expanded(
-                        child: Container(
-                          height: 100.0,
-                          child: Column(
-                            children: <Widget>[
-                              Expanded(
-                                  child: Padding(
-                                padding: const EdgeInsets.only(
-                                    bottom: 2.5, right: 2.5),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.red,
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Icon(
-                                        Icons.beenhere,
-                                        color: Colors.white,
-                                      ),
-                                      Text('Classified',
-                                          style: TextStyle(color: Colors.white))
-                                    ],
-                                  ),
-                                ),
-                              )),
-                              Expanded(
-                                  child: Padding(
-                                padding:
-                                    const EdgeInsets.only(top: 2.5, right: 2.5),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFFC7B4D),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Icon(
-                                        Icons.local_offer,
-                                        color: Colors.white,
-                                      ),
-                                      Text('Services',
-                                          style: TextStyle(color: Colors.white))
-                                    ],
-                                  ),
-                                ),
-                              )),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          height: 100.0,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Expanded(
-                                  child: Padding(
-                                padding: const EdgeInsets.only(
-                                    bottom: 2.5, left: 2.5),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFF53CEDB),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Icon(
-                                        Icons.account_balance,
-                                        color: Colors.white,
-                                      ),
-                                      Text('balance',
-                                          style: TextStyle(color: Colors.white))
-                                    ],
-                                  ),
-                                ),
-                              )),
-                              Expanded(
-                                  child: Padding(
-                                padding:
-                                    const EdgeInsets.only(top: 2.5, left: 2.5),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFF1B068),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Icon(
-                                        Icons.art_track,
-                                        color: Colors.white,
-                                      ),
-                                      Text('Jobs',
-                                          style: TextStyle(color: Colors.white))
-                                    ],
-                                  ),
-                                ),
-                              ))
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 10.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text('Popular Trending',
-                          style: TextStyle(fontSize: 18.0)),
-                      Text('View all',
-                          style: TextStyle(color: Color(0xFF2BD093))),
-                    ],
-                  ),
-                  SizedBox(height: 10.0),
-                  HorizontalView(),
-                  SizedBox(height: 10.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text('Categories', style: TextStyle(fontSize: 18.0)),
-                      Text('View all',
-                          style: TextStyle(color: Color(0xFF2BD093))),
-                    ],
-                  ),
-                  SizedBox(height: 10.0),
-                  Categories(),
-                  Products()
-                ],
+                    ),
+                  ],
+                ),
               ),
-            )),
+              //  second table
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: 20.0, horizontal: 10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          border: Border.all(color: Colors.grey),
+                          // color: Color(0xFFFD7384)
+                        ),
+                        child: Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 10.0, vertical: 15.0),
+                              child: Column(
+                                children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        'Explore',
+                                        style: TextStyle(
+                                          fontSize: 30.0,
+                                          color: Colors.black,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(height: 10.0),
+                                  Row(
+                                    children: <Widget>[
+                                      Expanded(
+                                        child: Container(
+                                          height: 60.0,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(5.0),
+                                              color: Color(0xFFFD7384)),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: <Widget>[
+                                              Icon(
+                                                Icons.drive_eta,
+                                                color: Colors.white,
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10.0),
+                                  Row(
+                                    children: <Widget>[
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(right: 2.5),
+                                          child: Container(
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(5.0),
+                                                color: Color(0xFFFD7384)),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: <Widget>[
+                                                Icon(
+                                                  Icons.drive_eta,
+                                                  color: Colors.white,
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 2.5),
+                                          child: Container(
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(5.0),
+                                                color: Color(0xFFFD7384)),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: <Widget>[
+                                                Icon(
+                                                  Icons.drive_eta,
+                                                  color: Colors.white,
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(height: 10.0),
+                                  Row(
+                                    children: <Widget>[
+                                      Expanded(
+                                        child: Container(
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(5.0),
+                                              color: Color(0xFFFD7384)),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: <Widget>[
+                                              Icon(
+                                                Icons.drive_eta,
+                                                color: Colors.white,
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              SizedBox(height: 10.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('Popular Trending', style: TextStyle(fontSize: 18.0)),
+                    Text('View all',
+                        style: TextStyle(color: Color(0xFF2BD093))),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10.0),
+              HorizontalView(),
+              SizedBox(height: 10.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('Categories', style: TextStyle(fontSize: 18.0)),
+                    Text('View all',
+                        style: TextStyle(color: Color(0xFF2BD093))),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10.0),
+              Categories(),
+              Products()
+            ],
+          ),
+        ),
       ],
     );
   }

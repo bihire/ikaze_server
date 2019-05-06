@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import './Components/Dashboard/MainContent.dart';
-import './Pages/Cart.dart';
-import './Pages/Shops.dart';
-import './Pages/Account.dart';
+import 'package:the_brand/Components/Dashboard/MainContent.dart';
+import 'package:the_brand/Pages/cart/Cart.dart';
+import 'package:the_brand/Pages/Shops.dart';
+import 'package:the_brand/Pages/Account.dart';
 
 void main() {
   runApp(MaterialApp(title: 'The Brand', home: HomePage()));
@@ -66,27 +66,6 @@ class HomePageState extends State<HomePage> {
               title: Text('cart'), icon: Icon(Icons.shopping_cart)),
           BottomNavigationBarItem(
               title: Text('account'), icon: Icon(Icons.person))
-        ],
-      ),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        iconTheme: new IconThemeData(color: Color(0xFF18D191)),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Colors.red,
-            ),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.notifications_active,
-              color: Colors.red,
-            ),
-            onPressed: () {},
-          )
         ],
       ),
       body: currentPage,

@@ -11,6 +11,7 @@ module.exports = (Sequelize, DataTypes) =>{
       defaultValue: false
     },
     balance: DataTypes.NUMERIC,
+    shopNumber: DataTypes.INTEGER
   },{})
   User.associate = models => {
     User.hasMany(models.Shop)

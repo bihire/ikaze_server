@@ -12,7 +12,10 @@
     "express": "^4.16.4",
     "pg": "^7.9.0",
     "pg-hstore": "*",
-    "sequelize": "^5.2.7"
+    "sequelize": "^5.2.7",
+    "multer": "*",
+    "cloudinary": "*",
+    "multer-storage-cloudinary": "*"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"

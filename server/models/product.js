@@ -5,9 +5,6 @@ module.exports = (Sequelize, DataTypes) => {
     price: DataTypes.NUMERIC,
     newPrice: DataTypes.NUMERIC,
     description: DataTypes.STRING,
-    color: DataTypes.STRING,
-    size: DataTypes.STRING,
-    quantity: DataTypes.INTEGER,
     productCondition: DataTypes.STRING,
   }, {})
   Product.associate = models => {

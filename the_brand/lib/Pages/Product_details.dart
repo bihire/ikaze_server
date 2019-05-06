@@ -37,6 +37,77 @@ class ProductDetailsState extends State<ProductDetails> {
           ],
         ),
         body: ListView(children: <Widget>[
+          // ============ Top Description ==========
+          Container(
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text('- data'),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        '${widget.product_detail_name}',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20.0,
+                          color: Colors.red,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.grey,
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        'Product Brand',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10.0),
+                        child: Text('Brand bro'),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        'Product Condition',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10.0),
+                        child: Text('New'),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        'Available sizes',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10.0),
+                        child: Text(widget.product_detail_name),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 10.0),
           Container(
             height: 300.0,
             child: GridTile(
@@ -70,10 +141,9 @@ class ProductDetailsState extends State<ProductDetails> {
               ),
             ),
           ),
-
-          // ========== First Button==============
           Row(
             children: <Widget>[
+              // ========== First Button ==============
               Expanded(
                 child: MaterialButton(
                   onPressed: () {
@@ -176,52 +246,6 @@ class ProductDetailsState extends State<ProductDetails> {
             title: Text('Product details'),
             subtitle: Text(
                 'She will provide guidance and technical inputs to the support the effective use and implementation of gender-sensitive SBCC strategies, activities, media and materials that promote priority behaviors and social norms. She will provide state-of-the-art technical inputs into the design, pretesting, development, production and dissemination of materials, and support related training activities. This position may be based in Kigali or in a regional office with frequent travel to districts for supervision and coordination.  '),
-          ),
-          Divider(),
-          Row(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
-                child: Text(
-                  'Product Name',
-                  style: TextStyle(color: Colors.grey),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(5.0),
-                child: Text(widget.product_detail_name),
-              )
-            ],
-          ),
-          Row(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
-                child: Text(
-                  'Product Brand',
-                  style: TextStyle(color: Colors.grey),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(5.0),
-                child: Text('Brand bro'),
-              )
-            ],
-          ),
-          Row(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
-                child: Text(
-                  'Product Condition',
-                  style: TextStyle(color: Colors.grey),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(5.0),
-                child: Text('New'),
-              )
-            ],
           ),
         ]));
   }
