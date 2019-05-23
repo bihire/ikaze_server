@@ -48,7 +48,7 @@ class ProductDetailsState extends State<ProductDetails> {
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.only(left: 10.0),
-                        child: Text('- data'),
+                        child: Text('- data', style: TextStyle(fontSize: 10.0)),
                       ),
                     ],
                   ),
@@ -141,112 +141,160 @@ class ProductDetailsState extends State<ProductDetails> {
               ),
             ),
           ),
-          Row(
-            children: <Widget>[
-              // ========== First Button ==============
-              Expanded(
-                child: MaterialButton(
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: Text('Size'),
-                            content: Text('Choose size'),
-                            actions: <Widget>[
-                              MaterialButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop(context);
-                                },
-                                child: Text('close'),
-                              )
-                            ],
-                          );
-                        });
-                  },
-                  color: Colors.white,
-                  textColor: Colors.grey,
-                  elevation: 0.2,
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Text('Size'),
-                      ),
-                      Expanded(child: Icon(Icons.arrow_drop_down)),
-                    ],
-                  ),
-                ),
-              ),
+          // Row(
+          //   children: <Widget>[
+          //     // ========== First Button ==============
+          //     Expanded(
+          //       child: MaterialButton(
+          //         onPressed: () {
+          //           showDialog(
+          //               context: context,
+          //               builder: (context) {
+          //                 return AlertDialog(
+          //                   title: Text('Size'),
+          //                   content: Text('Choose size'),
+          //                   actions: <Widget>[
+          //                     MaterialButton(
+          //                       onPressed: () {
+          //                         Navigator.of(context).pop(context);
+          //                       },
+          //                       child: Text('close'),
+          //                     )
+          //                   ],
+          //                 );
+          //               });
+          //         },
+          //         color: Colors.white,
+          //         textColor: Colors.grey,
+          //         elevation: 0.2,
+          //         child: Row(
+          //           children: <Widget>[
+          //             Expanded(
+          //               child: Text('Size'),
+          //             ),
+          //             Expanded(child: Icon(Icons.arrow_drop_down)),
+          //           ],
+          //         ),
+          //       ),
+          //     ),
 
-              // ========== Second Button==============
-              Expanded(
-                child: MaterialButton(
-                  onPressed: () {},
-                  color: Colors.white,
-                  textColor: Colors.grey,
-                  elevation: 0.2,
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Text('Colors'),
-                      ),
-                      Expanded(child: Icon(Icons.arrow_drop_down)),
-                    ],
-                  ),
-                ),
-              ),
+          //     // ========== Second Button==============
+          //     Expanded(
+          //       child: MaterialButton(
+          //         onPressed: () {},
+          //         color: Colors.white,
+          //         textColor: Colors.grey,
+          //         elevation: 0.2,
+          //         child: Row(
+          //           children: <Widget>[
+          //             Expanded(
+          //               child: Text('Colors'),
+          //             ),
+          //             Expanded(child: Icon(Icons.arrow_drop_down)),
+          //           ],
+          //         ),
+          //       ),
+          //     ),
 
-              // ========== third Button==============
-              Expanded(
-                child: MaterialButton(
-                  onPressed: () {},
-                  color: Colors.white,
-                  textColor: Colors.grey,
-                  elevation: 0.2,
-                  child: Row(
+          //     // ========== third Button==============
+          //     Expanded(
+          //       child: MaterialButton(
+          //         onPressed: () {},
+          //         color: Colors.white,
+          //         textColor: Colors.grey,
+          //         elevation: 0.2,
+          //         child: Row(
+          //           children: <Widget>[
+          //             Expanded(
+          //               child: Text('Qty'),
+          //             ),
+          //             Expanded(child: Icon(Icons.arrow_drop_down)),
+          //           ],
+          //         ),
+          //       ),
+          //     )
+          //   ],
+          // ),
+          // Row(
+          //   children: <Widget>[
+          //     Expanded(
+          //       child: MaterialButton(
+          //         onPressed: () {},
+          //         color: Colors.red,
+          //         textColor: Colors.white,
+          //         child: Text('Add to Cart'),
+          //       ),
+          //     ),
+          //     IconButton(
+          //       icon: Icon(
+          //         Icons.add_shopping_cart,
+          //         color: Colors.red,
+          //       ),
+          //       onPressed: () {},
+          //     ),
+          //     IconButton(
+          //       icon: Icon(
+          //         Icons.favorite_border,
+          //         color: Colors.red,
+          //       ),
+          //       onPressed: () {},
+          //     ),
+          //   ],
+          // ),
+          SizedBox(
+            height: 15.0,
+          ),
+
+          Container(
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Expanded(
-                        child: Text('Qty'),
-                      ),
-                      Expanded(child: Icon(Icons.arrow_drop_down)),
+                      Text('Kigali - Kicukiro - KK street 2300'),
+                      Icon(Icons.arrow_right)
                     ],
                   ),
-                ),
-              )
-            ],
+                  Row(
+                    children: <Widget>[],
+                  ),
+                ],
+              ),
+            ),
           ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: MaterialButton(
-                  onPressed: () {},
-                  color: Colors.red,
-                  textColor: Colors.white,
-                  child: Text('Add to Cart'),
+          SizedBox(height: 15.0),
+          Container(
+            color: Colors.white,
+            child: ListTile(
+              title: Padding(
+                padding: const EdgeInsets.only(bottom: 10.0),
+                child: Text(
+                  'Product details',
+                  style: TextStyle(fontSize: 20.0, color: Color(0xFF2BD093)),
                 ),
               ),
-              IconButton(
-                icon: Icon(
-                  Icons.add_shopping_cart,
-                  color: Colors.red,
-                ),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.favorite_border,
-                  color: Colors.red,
-                ),
-                onPressed: () {},
-              ),
-            ],
+              subtitle: Text(
+                  'She will provide guidance and technical inputs to the support the effective use and implementation of gender-sensitive SBCC strategies, activities, media and materials that promote priority behaviors and social norms. She will provide state-of-the-art technical inputs into the design, pretesting, development, production and dissemination of materials, and support related training activities. This position may be based in Kigali or in a regional office with frequent travel to districts for supervision and coordination.  '),
+            ),
           ),
-          Divider(),
-          ListTile(
-            title: Text('Product details'),
-            subtitle: Text(
-                'She will provide guidance and technical inputs to the support the effective use and implementation of gender-sensitive SBCC strategies, activities, media and materials that promote priority behaviors and social norms. She will provide state-of-the-art technical inputs into the design, pretesting, development, production and dissemination of materials, and support related training activities. This position may be based in Kigali or in a regional office with frequent travel to districts for supervision and coordination.  '),
+          SizedBox(
+            height: 15.0,
           ),
+
+          Container(
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                children: <Widget>[
+                  Text('Comments'),
+                ],
+              ),
+            ),
+          )
         ]));
   }
 }

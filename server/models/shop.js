@@ -5,11 +5,21 @@ module.exports = (Sequelize, DataTypes) => {
       type: DataTypes.STRING,
       unique: true
     },
-    description: DataTypes.TEXT,
-    genre: DataTypes.STRING
+    brand: DataTypes.STRING,
+    genre: DataTypes.STRING,
+    description: DataTypes.STRING,
   }, {})
   Shop.associate = models => {
-    Shop.belongsTo(models.User)
+    Shop.belongsTo(models.MainShop, {
+      onDelete: "CASCADE",
+      foreignKey: 'mainShop_id',
+      allowNull: false
+    })
+    Shop.belongsTo(models.Member, {
+      onDelete: "CASCADE",
+      foreignKey: 'member_id',
+      allowNull: false
+    })
   }
   return Shop
 }

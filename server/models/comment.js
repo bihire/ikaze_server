@@ -3,8 +3,16 @@ module.exports = (Sequelize, DataTypes) => {
     comment: DataTypes.STRING
   }, {})
   Comment.associate = models => {
-    Comment.belongsTo(models.Product)
-    Comment.belongsTo(models.User)
+    Comment.belongsTo(models.Product, {
+      onDelete: "CASCADE",
+      foreignKey: 'product_id',
+      allowNull: false
+    })
+    Comment.belongsTo(models.Member, {
+      onDelete: "CASCADE",
+      foreignKey: 'member_id',
+      allowNull: false
+    })
   }
   return Comment
 }

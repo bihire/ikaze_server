@@ -1,5 +1,5 @@
 module.exports = (Sequelize, DataTypes) =>{
-  const User = Sequelize.define('User', {
+  const Member = Sequelize.define('Member', {
     userName: DataTypes.STRING,
     email: {
       type: DataTypes.STRING,
@@ -10,11 +10,14 @@ module.exports = (Sequelize, DataTypes) =>{
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
-    balance: DataTypes.NUMERIC,
-    shopNumber: DataTypes.INTEGER
+    balance: DataTypes.NUMERIC
   },{})
-  User.associate = models => {
-    User.hasMany(models.Shop)
+  Member.associate = models => {
+    Member.belongsTo(models.MemberShip, {
+      onDelete: "CASCADE",
+      foreignKey: 'memberShip_id',
+      allowNull: false
+    })
   }
-  return User
+  return Member
 }

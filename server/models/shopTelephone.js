@@ -5,7 +5,11 @@ module.exports = (sequelize, DataTypes) => {
   })
 
   ShopTel.associate = function (models) {
-    ShopTel.belongsTo(models.Shop)
+    ShopTel.belongsTo(models.Shop, {
+      onDelete: "CASCADE",
+      foreignKey: 'shop_id',
+      allowNull: false
+    })
   }
 
   return ShopTel

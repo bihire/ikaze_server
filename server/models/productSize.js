@@ -4,7 +4,11 @@ module.exports = (Sequelize, DataTypes) => {
   }, {})
   ProductSize.associate = models => {
     // 1:m
-    ProductSize.belongsTo(models.ProductColor)
+    ProductSize.belongsTo(models.ProductColor, {
+      onDelete: "CASCADE",
+      foreignKey: 'productColor_id',
+      allowNull: false
+    })
   }
   return ProductSize
 }

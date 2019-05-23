@@ -4,7 +4,11 @@ module.exports = (Sequelize, DataTypes) => {
     tel: DataTypes.STRING
   }, {})
   PaymentInfo.associate = models => {
-    PaymentInfo.belongsTo(models.User)
+    PaymentInfo.belongsTo(models.Member, {
+      onDelete: "CASCADE",
+      foreignKey: 'member_id',
+      allowNull: false
+    })
   }
   return PaymentInfo
 }

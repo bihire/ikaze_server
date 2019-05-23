@@ -5,7 +5,11 @@ module.exports = (Sequelize, DataTypes) => {
     shopPhoto: DataTypes.STRING
   }, {})
   Photo.associate = models => {
-    Photo.belongsTo(models.Branch)
+    Photo.belongsTo(models.Shop, {
+      onDelete: "CASCADE",
+      foreignKey: 'shop_id',
+      allowNull: false
+    })
   }
   return Photo
 }

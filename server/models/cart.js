@@ -5,8 +5,11 @@ module.exports = (Sequelize, DataTypes) => {
     size: DataTypes.STRING,
   }, {})
   Cart.associate = models => {
-    Cart.belongsTo(models.Product)
-    Cart.belongsTo(models.User)
+    Cart.belongsTo(models.Member, {
+      onDelete: "CASCADE",
+      foreignKey: 'member_id',
+      allowNull: false
+    })
   }
   return Cart
 }

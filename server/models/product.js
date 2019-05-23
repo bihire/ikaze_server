@@ -9,9 +9,25 @@ module.exports = (Sequelize, DataTypes) => {
   }, {})
   Product.associate = models => {
     // 1:m
-    Product.belongsTo(models.Branch)
-    Product.belongsTo(models.Shop)
-    Product.belongsTo(models.User)
+    Product.belongsTo(models.MainShop, {
+      onDelete: "CASCADE",
+      foreignKey: 'mainShop_id',
+      allowNull: false
+    })
+    Product.belongsTo(models.Shop, {
+      onDelete: "CASCADE",
+      foreignKey: 'shop_id',
+      allowNull: false
+    })
+    Product.belongsTo(models.Member, {
+      onDelete: "CASCADE",
+      foreignKey: 'member_id',
+      allowNull: false
+    })
+    Product.hasMany(models.Cart, {
+      onDelete: "CASCADE",
+      foreignKey: 'product_id', allowNull: false
+    })
   }
   return Product
 }

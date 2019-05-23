@@ -4,7 +4,11 @@ module.exports = (Sequelize, DataTypes) => {
   }, {})
   ProductQuantity.associate = models => {
     // 1:m
-    ProductQuantity.belongsTo(models.ProductSize)
+    ProductQuantity.belongsTo(models.ProductSize, {
+      onDelete: "CASCADE",
+      foreignKey: 'productSize_id',
+      allowNull: false
+    })
   }
   return ProductQuantity
 }
