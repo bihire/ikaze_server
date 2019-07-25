@@ -1,29 +1,43 @@
-const { Shop } = require('../../models');
+import Shop from '../../models';
+import UserInfo from '../../models';
 
 module.exports = {
   async registerShop(req, res) {
     try {
-      console.log(req.body);
-      const { owner } = req.params;
-      const { name, shopEmail, description, genre, brand } = req.body;
-      const newShop = await Shop.create(
-        {
-          name,
-          description,
-          shopEmail,
-          genre,
-          owner,
-          brand,
-        },
-        {
-          fields: ['name', 'shopEmail', 'description', 'genre', 'owner', 'brand'],
-        },
-      );
+      let { owner } = req.params
+      const user_info = await UserInfo.findOne({
+        where: {
+          owner: owner
+        }
+      })
+      if (user_info) {
+        const { name, shopEmail, description, genre, brand } = req.body;
+        const newShop = await Shop.create(
+          {
+            name,
+            description,
+            shopEmail,
+            genre,
+            owner,
+            brand,
+          },
+          {
+            fields: ['name', 'shopEmail', 'description', 'genre', 'owner', 'brand'],
+          },
+        );
+        res.send({
+          message: 'it passed',
+          data: newShop,
+          results: 'ok',
+        });
+      }
       res.send({
-        message: 'it passed',
-        data: newShop,
+        status: 'error',
+        data: shops,
         results: 'ok',
       });
+
+      
     } catch (error) {
       res.status(500).send(`bro error: ${error}`);
     }

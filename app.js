@@ -15,7 +15,7 @@ require('./routes.js')(app);
 
 sequelize
   .sync({
-    force: false,
+    force: false
   })
   .then(() => {
     app.listen(config.port);

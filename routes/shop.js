@@ -1,5 +1,5 @@
-const express = require('express');
-const memberShopController = require('../controllers/shop/shopController');
+import express from 'express';
+import memberShopController from '../controllers/shop/shopController';
 // const memberController = require('../controllers/member/memberController')
 const router = express.Router();
 

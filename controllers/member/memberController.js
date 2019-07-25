@@ -1,4 +1,12 @@
+
 const { Member } = require('../../models');
+const jwt = require('jsonwebtoken');
+const express = require('express');
+
+const app = express();
+
+// We also need a secret to encode/decode our JWTs
+app.set('appSecret', 'super-secret-secret');
 
 module.exports = {
   async registerMember(req, res) {
@@ -44,6 +52,40 @@ module.exports = {
       });
     } catch (error) {
       res.status(500).send(`bro error: ${error}`);
+    }
+  },
+  async login(req, res) {
+    try {
+      const {
+        email,
+        password
+      } = req.body;
+      const User =await Member.findOne({
+        where: {email}
+     
+      });
+      if (!User) {
+        throw res.status(401).json({
+          message: 'Wrong email or password combination.'
+        });
+      }
+      const isPassword =await  User.password === password
+      if(!isPassword) {
+        throw res.status(401).json({
+          message: 'Wrong email or password combination.'
+        });
+      }
+      const token =await  jwt.sign(User.toJSON(), app.get('appSecret'));
+      res.status(200).json({
+        status: 'success',
+        data: token
+      });
+
+    } catch (error) {
+      res.status(403).send({
+        status: 'error',
+        error: `invalid email or password:   ${error}`
+      });
     }
   },
   async index(req, res) {
