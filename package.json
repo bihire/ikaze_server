@@ -4,6 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "lint": "eslint --ignore-path .gitignore **/*.js",
+    "format": "prettier-eslint **/*.{js,json} --write",
     "start": "nodemon app.js"
   },
   "author": "bihire",
@@ -18,9 +20,13 @@
     "multer-storage-cloudinary": "*",
     "pg": "^7.9.0",
     "pg-hstore": "*",
+    "prettier-eslint-cli": "^5.0.0",
     "sequelize": "^6.0.0"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
     "nodemon": "^1.18.10"
   }
 }

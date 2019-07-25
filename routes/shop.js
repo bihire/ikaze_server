@@ -1,9 +1,9 @@
-const memberShopController = require('../controllers/shop/shopController')
-// const memberController = require('../controllers/member/memberController')
 const express = require('express');
+const memberShopController = require('../controllers/shop/shopController');
+// const memberController = require('../controllers/member/memberController')
 const router = express.Router();
 
-//------------- Shop ------------
+//  ------------- Shop ------------
 
 router.post('/shop', memberShopController.registerShop);
 // router.patch('/membership/:member_ship_id', memberShipController.update);

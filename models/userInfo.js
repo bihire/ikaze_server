@@ -1,16 +1,20 @@
 module.exports = (Sequelize, DataTypes) => {
-  const UserInfo = Sequelize.define('UserInfo', {
-    mobo_phone: DataTypes.INTEGER,
-    passport: DataTypes.STRING,
-    national_id: DataTypes.STRING,
-    balance: DataTypes.NUMERIC,
-    transaction: DataTypes.NUMERIC
-  }, {})
+  const UserInfo = Sequelize.define(
+    'UserInfo',
+    {
+      mobo_phone: DataTypes.INTEGER,
+      passport: DataTypes.STRING,
+      national_id: DataTypes.STRING,
+      balance: DataTypes.NUMERIC,
+      transaction: DataTypes.NUMERIC,
+    },
+    {},
+  );
   UserInfo.associate = models => {
     UserInfo.belongsTo(models.Member, {
-      onDelete: "CASCADE",
+      onDelete: 'CASCADE',
       foreignKey: 'owner',
-      allowNull: false
+      allowNull: false,
     });
   };
   return UserInfo;

@@ -1,16 +1,16 @@
 module.exports = (sequelize, DataTypes) => {
   const BookmarkMainShop = sequelize.define('BookmarkMainShop', {});
 
-  BookmarkMainShop.associate = models => {
+  BookmarkMainShop.associate = (models) => {
     BookmarkMainShop.belongsTo(models.Member, {
-      onDelete: "CASCADE",
+      onDelete: 'CASCADE',
       foreignKey: 'member_id',
-      allowNull: false
+      allowNull: false,
     });
     BookmarkMainShop.belongsTo(models.MainShop, {
-      onDelete: "CASCADE",
+      onDelete: 'CASCADE',
       foreignKey: 'mainShop_id',
-      allowNull: false
+      allowNull: false,
     });
   };
 

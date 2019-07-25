@@ -1,18 +1,22 @@
 module.exports = (Sequelize, DataTypes) => {
-  const Comment = Sequelize.define('Comment', {
-    comment: DataTypes.STRING
-  }, {})
+  const Comment = Sequelize.define(
+    'Comment',
+    {
+      comment: DataTypes.STRING,
+    },
+    {},
+  );
   Comment.associate = models => {
     Comment.belongsTo(models.Product, {
-      onDelete: "CASCADE",
+      onDelete: 'CASCADE',
       foreignKey: 'product_id',
-      allowNull: false
-    })
+      allowNull: false,
+    });
     Comment.belongsTo(models.Member, {
-      onDelete: "CASCADE",
+      onDelete: 'CASCADE',
       foreignKey: 'member_id',
-      allowNull: false
-    })
-  }
-  return Comment
-}
+      allowNull: false,
+    });
+  };
+  return Comment;
+};

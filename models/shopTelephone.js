@@ -1,16 +1,16 @@
 module.exports = (sequelize, DataTypes) => {
   const ShopTel = sequelize.define('ShopTel', {
     owner: DataTypes.STRING,
-    tel: DataTypes.STRING
-  })
+    tel: DataTypes.STRING,
+  });
 
   ShopTel.associate = function (models) {
     ShopTel.belongsTo(models.Shop, {
-      onDelete: "CASCADE",
+      onDelete: 'CASCADE',
       foreignKey: 'shop_id',
-      allowNull: false
-    })
-  }
+      allowNull: false,
+    });
+  };
 
-  return ShopTel
-}
+  return ShopTel;
+};

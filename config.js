@@ -9,8 +9,7 @@ module.exports = {
     password: process.env.DB_PASSWORD || 'bobo1234',
     options: {
       dialect: process.env.DIALECT || 'postgres',
-      host: process.env.HOST || 'localhost'
-
-    }
-  }
-}
+      host: process.env.HOST || 'localhost',
+    },
+  },
+};

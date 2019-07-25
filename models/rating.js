@@ -1,18 +1,22 @@
 module.exports = (Sequelize, DataTypes) => {
-  const Rating = Sequelize.define('Rating', {
-    rate: DataTypes.INTEGER
-  }, {})
+  const Rating = Sequelize.define(
+    'Rating',
+    {
+      rate: DataTypes.INTEGER,
+    },
+    {},
+  );
   Rating.associate = models => {
     Rating.belongsTo(models.Product, {
-      onDelete: "CASCADE",
+      onDelete: 'CASCADE',
       foreignKey: 'product_id',
-      allowNull: false
-    })
+      allowNull: false,
+    });
     Rating.belongsTo(models.Member, {
-      onDelete: "CASCADE",
+      onDelete: 'CASCADE',
       foreignKey: 'member_id',
-      allowNull: false
-    })
-  }
-  return Rating
-}
+      allowNull: false,
+    });
+  };
+  return Rating;
+};
