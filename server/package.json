@@ -18,7 +18,7 @@
     "multer-storage-cloudinary": "*",
     "pg": "^7.9.0",
     "pg-hstore": "*",
-    "sequelize": "^5.2.7"
+    "sequelize": "^6.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"

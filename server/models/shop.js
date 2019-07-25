@@ -17,7 +17,7 @@ module.exports = (Sequelize, DataTypes) => {
     })
     Shop.belongsTo(models.Member, {
       onDelete: "CASCADE",
-      foreignKey: 'member_id',
+      foreignKey: 'owner',
       allowNull: false
     })
   }

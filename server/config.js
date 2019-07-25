@@ -5,7 +5,7 @@ module.exports = {
   api_secret: process.env.API_SECRET || 'JQwJOoAyGXNWxHWwQkUfRl5VMC4',
   db: {
     database: process.env.DB_DATABASE || 'the_brand',
-    username: process.env.DB_USER || 'postgres',
+    user: process.env.DB_USER || 'postgres',
     password: process.env.DB_PASSWORD || 'bobo1234',
     options: {
       dialect: process.env.DIALECT || 'postgres',
