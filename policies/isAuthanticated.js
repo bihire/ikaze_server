@@ -7,9 +7,7 @@ const app = express();
 app.set('appSecret', 'super-secret-secret');
 
 module.exports = function WebAuthentication(req, res, next) {
-  const {
-    token,
-  } = req.headers;
+  const { token } = req.headers;
   if (token) {
     jwt.verify(token, app.get('appSecret'), (err, sender) => {
       if (err) {
@@ -28,7 +26,6 @@ module.exports = function WebAuthentication(req, res, next) {
     });
   }
 };
-
 
 // const passport = require('passport');
 

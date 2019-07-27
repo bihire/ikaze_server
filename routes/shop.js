@@ -1,14 +1,15 @@
-import express from 'express';
-import memberShopController from '../controllers/shop/shopController';
+const express = require('express');
+
+const shopController = require('../controllers/shop/shopController');
 // const memberController = require('../controllers/member/memberController')
 const router = express.Router();
 
 //  ------------- Shop ------------
 
-router.post('/shop', memberShopController.registerShop);
-// router.patch('/membership/:member_ship_id', memberShipController.update);
-// router.get('/membership/all', memberShipController.index);
-// router.delete('/membership/:member_ship_id', memberShipController.delete);
+router.post('/shop/create', shopController.registerShop);
+router.patch('/shop/user/:id', shopController.update);
+router.get('/shop/user/all', shopController.index);
+router.delete('/shop/user/:id', shopController.delete);
 
 // -------------- Member -----------------
 

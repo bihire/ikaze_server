@@ -1,6 +1,7 @@
 const express = require('express');
 const memberShipController = require('../controllers/member/memberShipController');
 const memberController = require('../controllers/member/memberController');
+const memberInfoController = require('../controllers/member/memberInfoController');
 
 const router = express.Router();
 
@@ -18,5 +19,9 @@ router.post('/ikaze/signup', memberController.registerMember);
 router.get('/member/all', memberController.index);
 router.post('/ikaze/signin', memberController.login);
 // router.delete('/membership/:member_ship_id', memberShipController.delete);
+
+// -------------- MemberInfo --------------
+
+router.post('/member_info', memberInfoController.addUserInfo);
 
 module.exports = router;

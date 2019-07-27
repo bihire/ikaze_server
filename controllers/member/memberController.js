@@ -1,4 +1,3 @@
-
 const { Member } = require('../../models');
 const jwt = require('jsonwebtoken');
 const express = require('express');
@@ -56,35 +55,30 @@ module.exports = {
   },
   async login(req, res) {
     try {
-      const {
-        email,
-        password
-      } = req.body;
-      const User =await Member.findOne({
-        where: {email}
-     
+      const { email, password } = req.body;
+      const User = await Member.findOne({
+        where: { email },
       });
       if (!User) {
         throw res.status(401).json({
-          message: 'Wrong email or password combination.'
+          message: 'Wrong email or password combination.',
         });
       }
-      const isPassword =await  User.password === password
-      if(!isPassword) {
+      const isPassword = (await User.password) === password;
+      if (!isPassword) {
         throw res.status(401).json({
-          message: 'Wrong email or password combination.'
+          message: 'Wrong email or password combination.',
         });
       }
-      const token =await  jwt.sign(User.toJSON(), app.get('appSecret'));
+      const token = await jwt.sign(User.toJSON(), app.get('appSecret'));
       res.status(200).json({
         status: 'success',
-        data: token
+        data: token,
       });
-
     } catch (error) {
       res.status(403).send({
         status: 'error',
-        error: `invalid email or password:   ${error}`
+        error: `invalid email or password:   ${error}`,
       });
     }
   },
