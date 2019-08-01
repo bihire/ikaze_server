@@ -2,7 +2,7 @@ module.exports = (Sequelize, DataTypes) => {
   const UserInfo = Sequelize.define(
     'UserInfo',
     {
-      mobo_phone: DataTypes.INTEGER,
+      mobo_phone: DataTypes.STRING,
       passport: DataTypes.STRING,
       national_id: DataTypes.STRING,
       balance: DataTypes.NUMERIC,

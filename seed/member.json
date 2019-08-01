@@ -1,0 +1,32 @@
+[
+    {
+        "user_name": "bihire",
+        "first_name": "bihire",
+        "last_name": "boris",
+        "email": "muhire@yahoo.fr",
+        "password": "bobo1234",
+        "approved": false,
+        "phone": "0987654323",
+        "memberShip_id": 2
+    },
+    {
+        "user_name": "bihire",
+        "first_name": "bihire",
+        "last_name": "boris",
+        "email": "bihire@yahoo.fr",
+        "password": "bobo1234",
+        "approved": false,
+        "phone": "0987654323",
+        "memberShip_id": 1
+    },
+    {
+        "user_name": "jean",
+        "first_name": "muhire",
+        "last_name": "jean bosco",
+        "email": "muhireboris@yahoo.fr",
+        "password": "bobo1234",
+        "approved": true,
+        "phone": "0987654323",
+        "memberShip_id": 2
+    }
+]

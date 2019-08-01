@@ -9,6 +9,7 @@ const router = express.Router();
 router.post('/shop/create', shopController.registerShop);
 router.patch('/shop/user/:id', shopController.update);
 router.get('/shop/user/all', shopController.index);
+router.get('/shop/user/:id', shopController.getOne);
 router.delete('/shop/user/:id', shopController.delete);
 
 // -------------- Member -----------------
